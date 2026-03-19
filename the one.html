@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>VENAURA · icon themes</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #0f1219;
+        }
+
+        .app {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* ========== THEMES (all solid, icon accents) ========== */
+        /* THEME: CYBER (default) — blue/black with neon icon feel */
+        .app.cyber {
+            background-color: #0b0f17;
+            color: #e0ecff;
+        }
+        .app.cyber .solid-sidebar {
+            background-color: #131a26;
+            border-right: 2px solid #2d4c7c;
+        }
+        .app.cyber .sidebar-header {
+            border-bottom: 2px solid #2a4875;
+        }
+        .app.cyber .menu-item {
+            background-color: #1c2537;
+            border: 1px solid #2f4b77;
+            color: #ccdeff;
+        }
+        .app.cyber .menu-item i { color: #3aa2ff; }
+        .app.cyber .menu-item:hover { background-color: #25395a; }
+        .app.cyber .profile-card {
+            background-color: #172232;
+            border: 2px solid #325882;
+        }
+        .app.cyber .google-tag { background: #1e3152; border-color: #3f6aa5; }
+        .app.cyber .chat-area { background-color: #0c121e; }
+        .app.cyber .chat-header-solid {
+            background-color: #131c2c;
+            border-bottom: 3px solid #2b4880;
+        }
+        .app.cyber .bubble-solid.bot {
+            background-color: #1b263b;
+            border-color: #334e82;
+            color: #d6e6ff;
+        }
+        .app.cyber .bubble-solid.user {
+            background-color: #0f4c81;
+            border-color: #2f6eb0;
+        }
+        .app.cyber .input-area-solid {
+            background-color: #131c2c;
+            border-top: 3px solid #2b4880;
+        }
+        .app.cyber .input-area-solid input {
+            background: #0a111f;
+            border: 2px solid #2a4570;
+            color: white;
+        }
+
+        /* THEME: NEON — dark with pink/green icon neons */
+        .app.neon {
+            background-color: #0e0b17;
+            color: #f0e2ff;
+        }
+        .app.neon .solid-sidebar {
+            background-color: #1b1628;
+            border-right: 2px solid #ad3f9c;
+        }
+        .app.neon .sidebar-header { border-bottom: 2px solid #b84ca5; }
+        .app.neon .menu-item {
+            background-color: #2a1f38;
+            border: 1px solid #bf4fa8;
+            color: #f0d5ff;
+        }
+        .app.neon .menu-item i { color: #ff71d4; }
+        .app.neon .menu-item:hover { background-color: #493b60; }
+        .app.neon .profile-card {
+            background-color: #251e36;
+            border: 2px solid #c45cb0;
+        }
+        .app.neon .google-tag { background: #392d50; border-color: #ce6bbc; }
+        .app.neon .chat-area { background-color: #120d1f; }
+        .app.neon .chat-header-solid {
+            background-color: #1f1730;
+            border-bottom: 3px solid #bc4ba7;
+        }
+        .app.neon .bubble-solid.bot {
+            background-color: #2d2342;
+            border-color: #c759b1;
+            color: #f2dcff;
+        }
+        .app.neon .bubble-solid.user {
+            background-color: #942d7f;
+            border-color: #d452b6;
+        }
+        .app.neon .input-area-solid {
+            background-color: #1f1730;
+            border-top: 3px solid #bc4ba7;
+        }
+        .app.neon .input-area-solid input {
+            background: #130e21;
+            border: 2px solid #983d86;
+            color: white;
+        }
+
+        /* THEME: FOREST — deep green, earthy icons */
+        .app.forest {
+            background-color: #0f190f;
+            color: #deedd9;
+        }
+        .app.forest .solid-sidebar {
+            background-color: #1d2d1d;
+            border-right: 2px solid #4d8c4a;
+        }
+        .app.forest .sidebar-header { border-bottom: 2px solid #438541; }
+        .app.forest .menu-item {
+            background-color: #2b412b;
+            border: 1px solid #528f4e;
+            color: #daefd5;
+        }
+        .app.forest .menu-item i { color: #8bc34a; }
+        .app.forest .menu-item:hover { background-color: #3d633d; }
+        .app.forest .profile-card {
+            background-color: #1f331f;
+            border: 2px solid #569f52;
+        }
+        .app.forest .google-tag { background: #2e522e; border-color: #6fb26b; }
+        .app.forest .chat-area { background-color: #111e11; }
+        .app.forest .chat-header-solid {
+            background-color: #1b2b1b;
+            border-bottom: 3px solid #448a42;
+        }
+        .app.forest .bubble-solid.bot {
+            background-color: #284128;
+            border-color: #4d9849;
+            color: #e2f0db;
+        }
+        .app.forest .bubble-solid.user {
+            background-color: #1f6b3c;
+            border-color: #3d9f5a;
+        }
+        .app.forest .input-area-solid {
+            background-color: #1b2b1b;
+            border-top: 3px solid #448a42;
+        }
+        .app.forest .input-area-solid input {
+            background: #0f200f;
+            border: 2px solid #2f7536;
+            color: white;
+        }
+
+        /* THEME: ROYAL — purple/gold, opulent icons */
+        .app.royal {
+            background-color: #171225;
+            color: #f0e6ff;
+        }
+        .app.royal .solid-sidebar {
+            background-color: #261e3a;
+            border-right: 2px solid #c29b2b;
+        }
+        .app.royal .sidebar-header { border-bottom: 2px solid #c29b2b; }
+        .app.royal .menu-item {
+            background-color: #372c50;
+            border: 1px solid #dbaa34;
+            color: #f2e5ff;
+        }
+        .app.royal .menu-item i { color: #f5c542; }
+        .app.royal .menu-item:hover { background-color: #594982; }
+        .app.royal .profile-card {
+            background-color: #2f244b;
+            border: 2px solid #e5b73b;
+        }
+        .app.royal .google-tag { background: #46396b; border-color: #e6c153; }
+        .app.royal .chat-area { background-color: #1a142b; }
+        .app.royal .chat-header-solid {
+            background-color: #261e3f;
+            border-bottom: 3px solid #cba02b;
+        }
+        .app.royal .bubble-solid.bot {
+            background-color: #342a50;
+            border-color: #dbaa3b;
+            color: #f3e6ff;
+        }
+        .app.royal .bubble-solid.user {
+            background-color: #7d5f2a;
+            border-color: #cc9f32;
+        }
+        .app.royal .input-area-solid {
+            background-color: #261e3f;
+            border-top: 3px solid #cba02b;
+        }
+        .app.royal .input-area-solid input {
+            background: #17112b;
+            border: 2px solid #996f1f;
+            color: white;
+        }
+
+        /* layout */
+        .solid-sidebar {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            height: 100vh;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            z-index: 2000;
+        }
+
+        /* sidebar internal scroll — hidden */
+        .sidebar-menu {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 12px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .sidebar-menu::-webkit-scrollbar { display: none; }
+
+        .conversations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0 8px;
+            padding: 0 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .conversation-list {
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        .conversation-list::-webkit-scrollbar { display: none; }
+        .conversation-item {
+            padding: 10px 14px;
+            margin: 2px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.9rem;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 4px;
+        }
+
+        .theme-row {
+            display: flex;
+            gap: 16px;
+            padding: 10px 16px 20px;
+            flex-wrap: wrap;
+        }
+        .theme-icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid transparent;
+            transition: 0.1s;
+            min-width: 70px;
+        }
+        .theme-icon-card i {
+            font-size: 2rem;
+        }
+        .theme-icon-card span {
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .theme-icon-card:hover { border-color: #8a8fae; }
+
+        .divider {
+            height: 2px;
+            margin: 18px 16px;
+        }
+
+        .profile-card {
+            margin: 20px 16px 24px;
+            padding: 16px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        .profile-pic {
+            width: 52px; height: 52px;
+            background: #3f5575;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            border: 2px solid #6f8db0;
+        }
+        .profile-info { flex:1; min-width: 0; }
+        .profile-name { font-weight: 700; font-size: 1rem; }
+        .profile-email { font-size: 0.7rem; opacity: 0.9; }
+        .google-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            margin-top: 4px;
+        }
+
+        /* chat area */
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .chat-header-solid {
+            display: flex;
+            align-items: center;
+            padding: 16px 25px;
+            flex-shrink: 0;
+        }
+        .bot-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .cyber-icon-btn {
+            background: none;
+            border: none;
+            font-size: 2.2rem;
+            margin-right: 20px;
+            cursor: pointer;
+            color: inherit;
+            display: none;
+        }
+
+        .message-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 25px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .message-container::-webkit-scrollbar { display: none; }
+
+        .message-row {
+            display: flex;
+            width: 100%;
+            margin-bottom: 18px;
+        }
+        .message-row.bot { justify-content: flex-start; }
+        .message-row.user { justify-content: flex-end; }
+
+        .bubble-solid {
+            max-width: 75%;
+            padding: 14px 20px;
+            border-radius: 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border: 2px solid;
+        }
+
+        .demo-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 25px 15px;
+        }
+        .quick-btn {
+            padding: 9px 18px;
+            border-radius: 40px;
+            border: 2px solid;
+            cursor: pointer;
+            background: transparent;
+            font-weight: 500;
+        }
+
+        .input-area-solid {
+            display: flex;
+            padding: 18px 25px;
+            gap: 12px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .input-area-solid input {
+            flex: 1;
+            border-radius: 40px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .input-area-solid button {
+            width: 58px; height: 58px;
+            border-radius: 40px;
+            font-size: 1.5rem;
+            border: 2px solid;
+            background: #1f5a8e;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* desktop / mobile rules */
+        @media (min-width: 769px) {
+            .cyber-icon-btn { display: inline-block; }
+        }
+        @media (max-width: 768px) {
+            .solid-sidebar {
+                position: absolute;
+                left: 0; top: 0;
+                height: 100%;
+                z-index: 3000;
+                box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+                transform: translateX(-100%);
+                transition: transform 0.25s ease;
+            }
+            .solid-sidebar.mobile-open { transform: translateX(0); }
+            .cyber-icon-btn { display: inline-block; }
+            .sidebar-overlay {
+                display: none;
+                position: absolute;
+                top:0; left:0; width:100%; height:100%;
+                background: rgba(0,0,0,0.4);
+                z-index: 2500;
+            }
+            .sidebar-overlay.show { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app cyber" id="appMain">
+        <!-- mobile overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- SIDEBAR -->
+        <div class="solid-sidebar" id="mainSidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-bolt"></i> VENAURA</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item" id="newChatBtn">
+                    <i class="fas fa-message"></i> <span>+ New chat</span>
+                </div>
+
+                <div class="conversations-header">
+                    <span><i class="far fa-clock"></i> HISTORY</span>
+                </div>
+                <div class="conversation-list" id="conversationList"></div>
+
+                <div class="divider"></div>
+
+                <!-- THEME SELECTOR (icon based, no emoji) -->
+                <div class="menu-item" style="background:transparent; border:none; cursor:default;">
+                    <i class="fas fa-palette"></i> <span>Themes</span>
+                </div>
+                <div class="theme-row">
+                    <div class="theme-icon-card" data-theme="cyber">
+                        <i class="fas fa-microchip"></i>
+                        <span>CYBER</span>
+                    </div>
+                    <div class="theme-icon-card" data-theme="neon">
+                        <i class="fas fa-dragon"></i>
+                        <span>NEON</span>
+                    </div>
+                    <div class="theme-icon-card" data-theme="forest">
+                        <i class="fas fa-tree"></i>
+                        <span>FOREST</span>
+                    </div>
+                    <div class="theme-icon-card" data-theme="royal">
+                        <i class="fas fa-crown"></i>
+                        <span>ROYAL</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" id="shareLinkItem"><i class="fas fa-share-alt"></i> <span>Share link</span></div>
+                <div class="menu-item" id="privacyItem"><i class="fas fa-shield"></i> <span>Privacy & policy</span></div>
+                <div class="menu-item" id="botHubItem"><i class="fas fa-robot"></i> <span>Bot hub</span></div>
+                <div class="divider"></div>
+                <div class="menu-item" id="helpItem"><i class="fas fa-question-circle"></i> <span>Help</span></div>
+            </div>
+
+            <!-- profile -->
+            <div class="profile-card" id="profileCard">
+                <div class="profile-pic"><i class="fas fa-user-secret"></i></div>
+                <div class="profile-info">
+                    <div class="profile-name">Nova V.</div>
+                    <div class="profile-email">nova.venaura@icloud.com</div>
+                    <span class="google-tag"><i class="fab fa-google"></i> google</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAT AREA -->
+        <div class="chat-area">
+            <div class="chat-header-solid">
+                <button class="cyber-icon-btn" id="cyberToggleBtn"><i class="fas fa-bolt"></i></button>
+                <span class="bot-name">VENAURA 1.O</span>
+            </div>
+
+            <div class="message-container" id="messageContainer">
+                <div class="message-row bot"><div class="bubble-solid"><i class="fas fa-robot" style="margin-right:8px;"></i>VENAURA ready. Choose a theme.</div></div>
+            </div>
+
+            <div class="demo-options" id="quickReplies">
+                <span class="quick-btn" data-text="Tell me about VENAURA"><i class="fas fa-info-circle"></i> About</span>
+                <span class="quick-btn" data-text="Switch to cyber theme"><i class="fas fa-microchip"></i> Cyber</span>
+                <span class="quick-btn" data-text="Switch to neon theme"><i class="fas fa-dragon"></i> Neon</span>
+                <span class="quick-btn" data-text="Switch to forest theme"><i class="fas fa-tree"></i> Forest</span>
+            </div>
+
+            <div class="input-area-solid">
+                <input type="text" id="userInput" placeholder="Message VENAURA..." autocomplete="off">
+                <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const app = document.getElementById('appMain');
+            const sidebar = document.getElementById('mainSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const cyberToggle = document.getElementById('cyberToggleBtn');
+            const messageContainer = document.getElementById('messageContainer');
+            const userInput = document.getElementById('userInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const conversationList = document.getElementById('conversationList');
+            const newChatBtn = document.getElementById('newChatBtn');
+
+            // conversations
+            let conversations = [];
+            let currentConversationId = null;
+
+            function loadConversations() {
+                const saved = localStorage.getItem('venaura_themed');
+                if(saved) { conversations = JSON.parse(saved); }
+                else {
+                    const defaultConv = {
+                        id: 'conv_1',
+                        name: 'Welcome',
+                        messages: [{ role:'bot', text:'<i class="fas fa-microchip"></i> VENAURA ready. Choose a theme.' }]
+                    };
+                    conversations = [defaultConv];
+                    currentConversationId = defaultConv.id;
+                }
+                if(!currentConversationId && conversations.length) currentConversationId = conversations[0].id;
+                renderConversationList();
+                loadConversationById(currentConversationId);
+            }
+
+            function saveConversations() {
+                localStorage.setItem('venaura_themed', JSON.stringify(conversations));
+            }
+
+            function renderConversationList() {
+                let html = '';
+                conversations.forEach(conv => {
+                    const activeClass = conv.id === currentConversationId ? 'active' : '';
+                    html += `<div class="conversation-item ${activeClass}" data-id="${conv.id}">${conv.name}</div>`;
+                });
+                conversationList.innerHTML = html;
+                document.querySelectorAll('.conversation-item').forEach(el => {
+                    el.addEventListener('click', (e) => {
+                        loadConversationById(el.dataset.id);
+                        if(window.innerWidth <= 768) closeMobileSidebar();
+                    });
+                });
+            }
+
+            function loadConversationById(id) {
+                const conv = conversations.find(c => c.id === id);
+                if(!conv) return;
+                currentConversationId = id;
+                messageContainer.innerHTML = '';
+                conv.messages.forEach(msg => {
+                    addMessageToUI(msg.text, msg.role);
+                });
+                renderConversationList();
+            }
+
+            function addMessageToUI(text, sender) {
+                const row = document.createElement('div');
+                row.className = `message-row ${sender}`;
+                row.innerHTML = `<div class="bubble-solid">${text}</div>`;
+                messageContainer.appendChild(row);
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }
+
+            function getCurrentConv() {
+                return conversations.find(c => c.id === currentConversationId);
+            }
+
+            function addMessageToCurrent(text, sender) {
+                const conv = getCurrentConv();
+                if(conv) {
+                    conv.messages.push({ role: sender, text });
+                    if(sender === 'user' && conv.messages.filter(m => m.role === 'user').length === 1) {
+                        let name = text.length > 25 ? text.substring(0,22)+'…' : text;
+                        conv.name = name;
+                    }
+                    saveConversations();
+                    renderConversationList();
+                }
+                addMessageToUI(text, sender);
+            }
+
+            function newChat() {
+                const newId = 'conv_' + Date.now();
+                const newConv = {
+                    id: newId,
+                    name: 'New chat',
+                    messages: [{ role:'bot', text:'<i class="fas fa-bolt"></i> New conversation started.' }]
+                };
+                conversations.push(newConv);
+                currentConversationId = newId;
+                saveConversations();
+                renderConversationList();
+                loadConversationById(newId);
+                if(window.innerWidth <= 768) closeMobileSidebar();
+            }
+
+            // bot reply with icons
+            function botResponseFor(userMsg) {
+                const lower = userMsg.toLowerCase();
+                if(lower.includes('cyber')) return '<i class="fas fa-microchip"></i> CYBER theme activated.';
+                if(lower.includes('neon')) return '<i class="fas fa-dragon"></i> NEON theme activated.';
+                if(lower.includes('forest')) return '<i class="fas fa-tree"></i> FOREST theme activated.';
+                if(lower.includes('royal')) return '<i class="fas fa-crown"></i> ROYAL theme activated.';
+                if(lower.includes('about')) return '<i class="fas fa-robot"></i> VENAURA 1.O · icon themes & chat history.';
+                return '<i class="fas fa-shield-halved"></i> Acknowledged.';
+            }
+
+            function handleSend() {
+                const msg = userInput.value.trim();
+                if(!msg) return;
+                addMessageToCurrent(msg, 'user');
+                userInput.value = '';
+                setTimeout(() => {
+                    const reply = botResponseFor(msg);
+                    addMessageToCurrent(reply, 'bot');
+                },200);
+            }
+
+            // sidebar toggle
+            function isMobile() { return window.innerWidth <= 768; }
+            function openMobileSidebar() { sidebar.classList.add('mobile-open'); overlay.classList.add('show'); }
+            function closeMobileSidebar() { sidebar.classList.remove('mobile-open'); overlay.classList.remove('show'); }
+
+            let desktopSidebarVisible = true;
+            cyberToggle.addEventListener('click', () => {
+                if(isMobile()) { openMobileSidebar(); } 
+                else {
+                    desktopSidebarVisible = !desktopSidebarVisible;
+                    sidebar.style.display = desktopSidebarVisible ? 'flex' : 'none';
+                }
+            });
+            overlay.addEventListener('click', closeMobileSidebar);
+
+            // theme switching via icons
+            document.querySelectorAll('.theme-icon-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const theme = card.dataset.theme;
+                    app.className = 'app ' + theme;
+                    // also post a system message?
+                    addMessageToCurrent(`<i class="fas ${theme === 'cyber' ? 'fa-microchip' : theme==='neon'?'fa-dragon':theme==='forest'?'fa-tree':'fa-crown'}"></i> ${theme.toUpperCase()} theme applied.`, 'bot');
+                });
+            });
+
+            // quick replies (icon style)
+            document.querySelectorAll('.quick-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.getAttribute('data-text') || btn.innerText;
+                    addMessageToCurrent(text, 'user');
+                    setTimeout(() => {
+                        const reply = botResponseFor(text);
+                        addMessageToCurrent(reply, 'bot');
+                    },200);
+                });
+            });
+
+            // other menu items
+            document.getElementById('shareLinkItem').addEventListener('click', ()=>prompt('🔗','https://venaura.app/chat'));
+            document.getElementById('privacyItem').addEventListener('click', ()=>alert('Privacy: local storage only.'));
+            document.getElementById('botHubItem').addEventListener('click', ()=>addMessageToCurrent('<i class="fas fa-robot"></i> Bot hub: VENAURA, Atlas, Nova', 'bot'));
+            document.getElementById('helpItem').addEventListener('click', ()=>addMessageToCurrent('<i class="fas fa-question"></i> Type or use icons.', 'bot'));
+            document.getElementById('profileCard').addEventListener('click', ()=>alert('Google account: nova.venaura@icloud.com'));
+
+            newChatBtn.addEventListener('click', newChat);
+            sendBtn.addEventListener('click', handleSend);
+            userInput.addEventListener('keypress', e => { if(e.key==='Enter') handleSend(); });
+
+            loadConversations();
+
+            if('serviceWorker' in navigator) {
+                window.addEventListener('load', ()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+            }
+        })();
+    </script>
+    <!-- sw.js placeholder -->
+</body>
+</html>
